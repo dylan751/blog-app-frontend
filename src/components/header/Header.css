@@ -6,7 +6,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Lora", serif;
+  font-family: "Lora", sans-serif;
+  font-style: italic;
   color: #444;
 }
 
