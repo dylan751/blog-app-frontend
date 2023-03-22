@@ -1,5 +1,5 @@
-import Post from "../post/Post";
-import "./Posts.css";
+import Post from '../post/Post';
+import './Posts.css';
 
 function Posts() {
   return (

@@ -1,4 +1,4 @@
-import "./Sidebar.css";
+import './Sidebar.css';
 
 function Sidebar() {
   return (

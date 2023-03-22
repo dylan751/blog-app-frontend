@@ -1,4 +1,4 @@
-import "./Post.css";
+import './Post.css';
 
 function Post() {
   return (
@@ -21,14 +21,12 @@ function Post() {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. In cum
         reiciendis enim quia consequatur, molestiae illum soluta aliquid
         incidunt id vero optio ducimus aut tempore autem atque nesciunt
-        explicabo assumenda?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In cum
-        reiciendis enim quia consequatur, molestiae illum soluta aliquid
-        incidunt id vero optio ducimus aut tempore autem atque nesciunt
-        explicabo assumenda?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. In cum
-        reiciendis enim quia consequatur, molestiae illum soluta aliquid
-        incidunt id vero optio ducimus aut tempore autem atque nesciunt
+        explicabo assumenda? Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. In cum reiciendis enim quia consequatur, molestiae illum soluta
+        aliquid incidunt id vero optio ducimus aut tempore autem atque nesciunt
+        explicabo assumenda? Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. In cum reiciendis enim quia consequatur, molestiae illum soluta
+        aliquid incidunt id vero optio ducimus aut tempore autem atque nesciunt
         explicabo assumenda?
       </p>
     </div>
