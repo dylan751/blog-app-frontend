@@ -20,7 +20,7 @@ function Sidebar() {
       <div className="sidebarItem">
         <span className="sidebarTitle">ABOUT ME</span>
         <img
-          src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          src={`${process.env.REACT_APP_IMAGES_ENDPOINT}/1680174708619d2-min.jpg`}
           alt=""
         />
         <p>
