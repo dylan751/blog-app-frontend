@@ -1,7 +1,7 @@
 import './Post.css';
 
 function Post({ post }) {
-  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}/images/`;
+  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}`;
   return (
     <div className="post">
       <img

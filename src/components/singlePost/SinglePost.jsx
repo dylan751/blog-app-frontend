@@ -8,7 +8,7 @@ import 'react-quill/dist/quill.snow.css';
 import { modules, formats } from '../../constants/ReactQuillConfig';
 
 function SinglePost() {
-  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}/images/`;
+  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}`;
   const location = useLocation();
   const postId = location.pathname.split('/')[2];
   const [post, setPost] = useState({});

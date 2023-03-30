@@ -5,7 +5,8 @@ import axios from 'axios';
 import './Settings.css';
 
 function Settings() {
-  const { user } = useContext(Context);
+  const { user, dispatch } = useContext(Context);
+  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}`;
   const [file, setFile] = useState(null);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -14,6 +15,7 @@ function Settings() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    dispatch({ type: 'UPDATE_START' });
 
     const updatedUser = {
       userId: user._id,
@@ -35,12 +37,15 @@ function Settings() {
     }
 
     try {
-      await axios.put(
+      const res = await axios.put(
         `${process.env.REACT_APP_API_ENDPOINT}/users/${user._id}`,
         updatedUser,
       );
       setSuccess(true);
-    } catch (err) {}
+      dispatch({ type: 'UPDATE_SUCCESS', payload: res.data });
+    } catch (err) {
+      dispatch({ type: 'UPDATE_FAILURE' });
+    }
   };
 
   return (
@@ -53,7 +58,14 @@ function Settings() {
         <form className="settingsForm" onSubmit={handleSubmit}>
           <label>Profile Picture</label>
           <div className="settingsPP">
-            <img src={user.profilePicture} alt="" />
+            <img
+              src={
+                file
+                  ? URL.createObjectURL(file)
+                  : PublicFolder + user.profilePicture
+              }
+              alt=""
+            />
             <label htmlFor="fileInput">
               <i className="settingsPPIcon far fa-user-circle"></i>
             </label>
