@@ -4,7 +4,7 @@ import axios from 'axios';
 import './SinglePost.css';
 
 function SinglePost() {
-  const PublicFolder = 'http://localhost:4000/images/';
+  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}/images/`;
   const location = useLocation();
   const path = location.pathname.split('/')[2];
   const [post, setPost] = useState({});

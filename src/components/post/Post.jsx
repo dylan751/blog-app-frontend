@@ -1,13 +1,11 @@
 import './Post.css';
 
 function Post({ post }) {
-  // const PublicFolder = `${process.env.REACT_APP_API_ENDPOINT}/images/`;
-  const PublicFolder = 'http://localhost:4000/images/';
+  const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}/images/`;
   return (
     <div className="post">
       <img
         className="postImg"
-        // src={post.photo ? post.photo : `${PublicFolder + post.photo}`}
         src={
           post.photo
             ? `${PublicFolder + post.photo}`
