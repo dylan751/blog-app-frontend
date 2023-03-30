@@ -2,6 +2,9 @@ import { useContext, useState } from 'react';
 import axios from 'axios';
 import './Write.css';
 import { Context } from '../../context/Context';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { modules, formats } from '../../constants/ReactQuillConfig';
 
 function Write() {
   const [title, setTitle] = useState('');
@@ -64,12 +67,14 @@ function Write() {
           />
         </div>
         <div className="writeFormGroup">
-          <textarea
+          <ReactQuill
             placeholder="Tell your story..."
-            type="text"
             className="writeInput writeText"
-            onChange={(e) => setDescription(e.target.value)}
-          ></textarea>
+            value={description}
+            onChange={(newValue) => setDescription(newValue)}
+            modules={modules}
+            formats={formats}
+          />
         </div>
         <button className="writeSubmit" type="submit">
           Publish

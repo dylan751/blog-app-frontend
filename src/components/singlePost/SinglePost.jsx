@@ -3,6 +3,9 @@ import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
 import './SinglePost.css';
 import { Context } from '../../context/Context';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
+import { modules, formats } from '../../constants/ReactQuillConfig';
 
 function SinglePost() {
   const PublicFolder = `${process.env.REACT_APP_IMAGES_ENDPOINT}/images/`;
@@ -96,13 +99,17 @@ function SinglePost() {
           </span>
         </div>
         {updateMode ? (
-          <textarea
-            className="singlePostDescInput"
+          <ReactQuill
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            onChange={(newValue) => setDescription(newValue)}
+            modules={modules}
+            formats={formats}
           />
         ) : (
-          <p className="singlePostDesc">{description}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: description }}
+            className="singlePostDesc"
+          />
         )}
         {updateMode && (
           <button className="singlePostButton" onClick={handleUpdate}>
